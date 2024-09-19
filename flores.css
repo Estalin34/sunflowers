@@ -1,0 +1,122 @@
+/* Estilo general del cuerpo */
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #fdf6e3;
+    font-family: "Arial", sans-serif;
+}
+
+/* Contenedor del ramo de girasoles */
+.ramo-de-girasoles {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+    gap: 10px;
+}
+
+/* Cada girasol */
+.girasol {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: 190px;
+    height: 190px;
+    animation: girasol-girar 10s infinite linear;
+    transition: transform 0.5s;
+}
+
+.girasol:hover {
+    transform: scale(1.1);
+}
+
+/* Centro del girasol */
+.centro {
+    background-color: #3e2723;
+    width: 50px;
+    height: 50px;
+    border-radius: 120%;
+    z-index: 1;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+}
+
+/* Pétalos del girasol */
+.petalo {
+    position: absolute;
+    width: 200px;
+    height: 29px;
+    background-color: #fbc02d;
+    border-radius: 20px 20px 0 0;
+    transform-origin: 50% 100%;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+/* Posición de los pétalos */
+.petalo:nth-child(2) {
+    transform: rotate(45deg);
+}
+.petalo:nth-child(3) {
+    transform: rotate(90deg);
+}
+.petalo:nth-child(4) {
+    transform: rotate(135deg);
+}
+.petalo:nth-child(5) {
+    transform: rotate(180deg);
+}
+.petalo:nth-child(6) {
+    transform: rotate(225deg);
+}
+.petalo:nth-child(7) {
+    transform: rotate(270deg);
+}
+.petalo:nth-child(8) {
+    transform: rotate(315deg);
+}
+
+/* Animación de los girasoles */
+@keyframes girasol-girar {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* Mensaje */
+.mensaje {
+    text-align: center;
+    background-color: #fff3e0;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    opacity: 0; /* Ocultar inicialmente */
+    transition: opacity 2s ease-in-out;
+}
+
+/* Animación para el mensaje */
+.mensaje h1 {
+    font-family: "Georgia", serif;
+    font-size: 2.5rem;
+    color: #f57f17;
+    margin: 0;
+}
+
+/* Mostrar el mensaje lentamente */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
